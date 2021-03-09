@@ -119,7 +119,7 @@ np.copy(x) # x matrisinin kopyasını al (kaynakları ayır ki biz y de değişi
 np.any() # iki ndarrayın kıyaslaması sonucu bütün koşullar doğru ise True döner
 np.all() # iki ndarrayın kıyaslaması sonucu en az biri doğru ise True döner
 
-    >set operations (grup işlemleri )
+    > set operations (grup işlemleri )
 np.intersect1d(x, y) # x'in y ye kesişimini gösterir
 np.setdiff1d(x, y) # x'te olan y'de olmayan
 np.union1d(x,y) # x ve y matrisinde olan sayıları gösterir, bir sayı her iki kümede var ise tek bir sayı gösterir
@@ -176,7 +176,7 @@ Not:boolean indexing
         print(bool_index_kıyaslama)
 
 
-###fancy ve boolean indexinde orjinal değişmez (otomatik olarak copy oluşturur numpy) ama slice ile orjinali değişir
+### fancy ve boolean indexinde orjinal değişmez (otomatik olarak copy oluşturur numpy) ama slice ile orjinali değişir
 
 #genelde makine öğrenmesi için boolean index kullanılır ufak bir örnek vermek gerekir ise
 
@@ -195,7 +195,7 @@ print(x)
 ## ARİTMETİK İŞLEMLER
 
 
-> Broadcast, iki tane benzemeyen arrayın benzetilip işlem yapılması olarak gecer (element-wise yapar)[eğer hiç benzer yanları yok ise broadcas hatası döner]
+> Broadcast, iki tane benzemeyenOPERATÖRLERİ arrayın benzetilip işlem yapılması olarak gecer (element-wise yapar)[eğer hiç benzer yanları yok ise broadcas hatası döner]
 
 broadcast ile ilgili bir görsel;
 ![Broadcast](broadcast.png)
