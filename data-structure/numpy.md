@@ -90,7 +90,7 @@ np.eye(4, k=0) # 4 carpı 4 lük diagonal döndürür  [[1 0 0 0]
 
 np.identity() # eye fonk gibi neredeyse aynısı
 np.diag([5,4,9,2]) # eye fonksiyonundaki 1 ler yerine dizideki degerler yer değiştirir (k=0  default)
-np.linspace(2, 5, 100) # 2 ile 5 arasında 100 tane sayı ver (2 ve 5  dahil). N = 50 (default). 2 ve 5 arasında belli aralıklarla bütün sayıları verir.
+np.linspace(2, 5, 100) # 2 ile 5 arasında 100 tane sayı ver (2 ve 5  dahil). N = 50 (default). 2 ve 5 arasında belli aralıklarla 100 sayı verir.
                          endpoint = True(default)
 
 np.reshape([0,1,2,3,4,5,6,7,8,9], (2,2)) # 2 carpı 2 matrixlik olarak döndür, aynı zamanda ndarray objesini yeniden şekillendirme özelliği vardır
