@@ -67,7 +67,7 @@ def attribute_bul(nmpy_dizi):
 import numpy as np
 
 np.array() # dizi oluşturma (temel dizi oluşturma fonk.)
-np.arrange() # range fonk. gibi neredeysa aynı kullanımı sağlar
+np.arrange() # python range fonk. gibi neredeysa aynı kullanımı sağlar
 np.sqrt() # kök alma işlemi
 np.save("filepath/filename.npy", np_opject) # objeyi kayıt eder
 np.load("filepath/filename.npy") # objeyi geri çağırır, yükler
@@ -90,7 +90,7 @@ np.eye(4, k=0) # 4 carpı 4 lük diagonal döndürür  [[1 0 0 0]
 
 np.identity() # eye fonk gibi neredeyse aynısı
 np.diag([5,4,9,2]) # eye fonksiyonundaki 1 ler yerine dizideki degerler yer değiştirir (k=0  default)
-np.linspace(2, 5, 100) # 2 ile 5 arasında 100 tane sayı ver (2 ve 5  dahil). N = 50 (default) varsayılan parametre değer
+np.linspace(2, 5, 100) # 2 ile 5 arasında 100 tane sayı ver (2 ve 5  dahil). N = 50 (default). 2 ve 5 arasında belli aralıklarla bütün sayıları verir.
                          endpoint = True(default)
 
 np.reshape([0,1,2,3,4,5,6,7,8,9], (2,2)) # 2 carpı 2 matrixlik olarak döndür, aynı zamanda ndarray objesini yeniden şekillendirme özelliği vardır
