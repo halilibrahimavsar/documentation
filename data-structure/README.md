@@ -1,2 +1,1 @@
-## this documentation will be contain: Numpy, Matplotlib, Pandas
-and just with simple doc
+## just any data structure documentations with simple definitions
