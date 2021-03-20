@@ -1,91 +1,103 @@
-# PANDAS TUTORIAL
+"""
+pandas' some subsection is Series and DataFrame.
+Series is one dimensional and dataframe is two dimensional.
+if we slice dataframe we obtain series, so this mean dataframe contains series.
 
-*Bu Dökümantasyon basit ve temel seviye pandas fonksiyon ve metotlarını nasıl kullanmamız gerektiğini açıklar*
+differance between pd and np is Pandas can work with any type but numpy can not.
+for an example;
+You can give any python data type, csv, html, json... etc to the pandas. (take a look to pd.read_...)
+"""
 
-* **Nedir ?**
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-*Veri analizi için geliştirilen en iyi kütüphanelerden biridir.*
-*genel olarak numpy aynı verileri kullanır iken pandas çeşitli veriler ile calışabilir.*
-*örneğin bir database bilgilerini veya exel verilerinin üzerinde hakimiyet sağlar*
+# creating series :
+# series = pd.Series(data)
 
-
-> alttaki bütün kod bloklarında numpy[ufak tefek bazı örneklerde kullanmak icin numpy import ediyoruz] ve pandası import ettiğimizi varsayıyoruz,
-> aşşağıdaki gibi;
-> ```python
-> import pandas as pd
-> import numpy as np
-> ```
-
-
-* **pd.DataFrame** oluşturmak
-> DataFrame'in kolonları series'lerden oluşur (bu demektir ki data frame'i slice'larsak(dilimlersek) seriesler bize döner.
-
-> Dict keylerini kolon başlığı olarak tanımlar
-
-> 2 boyutlu olarak algılar
-
-örnek;
-```python
-calısan_isimleri = ["ahmet", "mehmet", "ali"]
-calısan_yasları =[23,12,59]
-maaslar = [2300,2600,5000]
-
-data_frame = pd.DataFrame({
-    "isim" : calısan_isimleri,
-    "yas" : calısan_yasları,
-    "maaş" : maaslar
-})
-
-#python dictionary veri tipi ile neredeyse aynı şekilde dilimleme yapılabilir
-print(data_frame)
-print()
-print(data_frame["isim"]) #isimlerin olduğu kolonu verir
-print()
-print(data_frame.values) #datayı verir
-print()
-print(data_frame.index)  #indexlerini verir (key)
-```
+# creating dataframe :
+# df = pd.DataFrame(data)
 
 
+#### INPUT AND OUTPUT
+"""
+for reading data from any source look at pd.read_...
+and for save an data as an file look at pd.DataframeOrSeriesVeriable.to_....
+"""
+csv_path = "/home/mint/PycharmProjects/aiCodes/data/survey_results_public.csv"
+df = pd.read_csv(csv_path, index_col="Respondent")  # we can read csv, xlsx xml... so on.
+# you can pass any column to the csv data as index which is in csv data with index_col parameter
 
-* **pd.Series** oluşturmak
 
-> series'lerde eğer biz sadece data olarak liste, ndarray, tuple verirsek
+#### SERIES SECTION
+# waiting
 
-> (sıfırdan başlayarak) ototmatik olarak index tanımlar (python enumerate fonksiyonu gibi)
 
-> ama sözlük verirsek sözlükteki key'leri index olarak kullanır
+#### DATAFRAME SECTION
 
-örnek;
-```python
-liste = list("abcdefg")
-tupl = (0,1,2,3,4)
-sözlük = {i:j for i, j in zip([1,2,3,4,5], ["a","b","c","d","e"])}
-numpy_dizi = np.linspace(0,10, 10, endpoint=False)
+def dataframe():
+    print(df.head(6))  # firs six rows of data
+    print(df.tail(6))  # last six rows of data
+    print(df.shape)  # returning shape of dataframe or series
+    print(df.info())  # brief info about dataframe's included type of columns
+    print(df.index)  # return dataframe's indexes
+    print(df.columns)  # return dataframe's columns
 
-print("liste ile :\n", pd.Series(liste))
-print()
-print("tuple ile :\n", pd.Series(tupl))
-print()
-print("sözlük ile [indexleri keyden alıyor] :\n", pd.Series(sözlük))
-print()
-print("numpy ile :\n", pd.Series(numpy_dizi))
-```
 
-> seriesler ile mantık operatörleri aritmetik işlemler gibi özellikler kullanılabilir
+#### DATA SELECTION
 
-örnek;
-```python
-dictionar = {"a":20, "b":50, "c":60, "d":90, "e":100}
-obj = pd.Series(dictionar)
+## LOC ILOC
+def loc_iloc():
+    """
+    if you wanna select rows you need use loc or iloc
+    but if you wanna select columns you need use
+    df["ColumnName"] or df.ColumnName (but the first way is better than second) 
 
-obj[obj >= 58]=0
-print(obj)
+    now lets talk a little bit about loc and iloc
+    iloc is integerLocation, loc is Location.
+    differance between them is loc accept string, iloc accept integer.
 
-print(obj / 2)
+    so for an couple of example
+    loc :
+    df.loc[[ListOfRows], [ListOfColumns]] -> return given list of column and rows
+    df.loc[FirstRows:LastRows, FirstColumns:LastColumns] -> return all of among the
+    first and last given columns and rows.
+    iloc is same as above but differance is, lets say again, loc accept string, iloc accept integer
+    """
 
-```
-> aslında dict ile cok benzerdirler (numpy == python list, pandas == python dict)
+## CONDDITIONAL SELECTION 
+def condition_selection():
+    """
+    Another info about selection data in dataframe is we can use conditional operations in loc.
+    simple example about condition ;
+
+    return all of even number in range of zero to ten
+    """
+    print(df.iloc[[i for i in range(10) if i % 2 == 0], [2, 3]])
+
+
+
+
+#### ANY OTHER SUBSECTIONS
+
+def trying():
+    # setting column as an index. to do so (also an another way to do so is pass an argument. see line 28)
+    changed_index_in_df = df.set_index("Hobbyist", inplace=True)
+    # but this is just silly sample that we did.
+    # Because of index mean is normally need to be unique values but in hobbyist data just Yes or No is available...
+    print("Changed index in df  : ")
+    print(changed_index_in_df)
+    # by the way  the inplace=True argument is using for change the actual dataframe object
+    # You can use this argument almost in every functions
+
+
+    print(df.loc[["Yes"], ["MainBranch", "Age", "Country"]])
+
+    print("Reset index :")
+    df.reset_index(inplace=True)
+    print(df)
+
+
 
 
 
