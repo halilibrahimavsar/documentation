@@ -23,8 +23,8 @@ creating dataframe :
 
 ## INPUT AND OUTPUT
 
-for reading data from any source look at pd.read_...
-and for save an data as an file look at pd.DataframeOrSeriesVeriable.to_....
+for reading data from any source look at ```pd.read_...```
+and for save an data as an file look at ```pd.DataframeOrSeriesVeriable.to_....```
 
 ```
 csv_path = "/home/mint/PycharmProjects/aiCodes/data/survey_results_public.csv"
@@ -34,7 +34,7 @@ you can pass any column to the csv data as index which is in csv data with index
 
 
 ## SERIES SECTION
-waiting
+waiting...
 
 
 ## DATAFRAME SECTION
@@ -70,7 +70,9 @@ def loc_iloc():
     iloc is same as above but differance is, lets say again, loc accept string, iloc accept integer
     """
 ```
-#### CONDDITIONAL SELECTION 
+
+#### CONDDITIONAL SELECTION
+```
 def condition_selection():
     """
     Another info about selection data in dataframe is we can use conditional operations in loc.
@@ -79,7 +81,7 @@ def condition_selection():
     return all of even number in range of zero to ten
     """
     print(df.iloc[[i for i in range(10) if i % 2 == 0], [2, 3]])
-
+```
 
 
 
