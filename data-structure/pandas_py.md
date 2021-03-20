@@ -1,4 +1,5 @@
-"""
+* PANDAS DOC
+
 pandas' some subsection is Series and DataFrame.
 Series is one dimensional and dataframe is two dimensional.
 if we slice dataframe we obtain series, so this mean dataframe contains series.
@@ -6,35 +7,38 @@ if we slice dataframe we obtain series, so this mean dataframe contains series.
 differance between pd and np is Pandas can work with any type but numpy can not.
 for an example;
 You can give any python data type, csv, html, json... etc to the pandas. (take a look to pd.read_...)
-"""
 
+```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+```
 
-# creating series :
-# series = pd.Series(data)
+creating series :
+```series = pd.Series(data)```
 
-# creating dataframe :
-# df = pd.DataFrame(data)
+creating dataframe :
+```df = pd.DataFrame(data)```
 
 
-#### INPUT AND OUTPUT
-"""
+## INPUT AND OUTPUT
+
 for reading data from any source look at pd.read_...
 and for save an data as an file look at pd.DataframeOrSeriesVeriable.to_....
-"""
+
+```
 csv_path = "/home/mint/PycharmProjects/aiCodes/data/survey_results_public.csv"
 df = pd.read_csv(csv_path, index_col="Respondent")  # we can read csv, xlsx xml... so on.
-# you can pass any column to the csv data as index which is in csv data with index_col parameter
+```
+you can pass any column to the csv data as index which is in csv data with index_col parameter
 
 
-#### SERIES SECTION
-# waiting
+## SERIES SECTION
+waiting
 
 
-#### DATAFRAME SECTION
-
+## DATAFRAME SECTION
+```
 def dataframe():
     print(df.head(6))  # firs six rows of data
     print(df.tail(6))  # last six rows of data
@@ -42,11 +46,12 @@ def dataframe():
     print(df.info())  # brief info about dataframe's included type of columns
     print(df.index)  # return dataframe's indexes
     print(df.columns)  # return dataframe's columns
+```
 
+## DATA SELECTION
 
-#### DATA SELECTION
-
-## LOC ILOC
+#### LOC ILOC
+```
 def loc_iloc():
     """
     if you wanna select rows you need use loc or iloc
@@ -64,8 +69,8 @@ def loc_iloc():
     first and last given columns and rows.
     iloc is same as above but differance is, lets say again, loc accept string, iloc accept integer
     """
-
-## CONDDITIONAL SELECTION 
+```
+#### CONDDITIONAL SELECTION 
 def condition_selection():
     """
     Another info about selection data in dataframe is we can use conditional operations in loc.
@@ -78,8 +83,8 @@ def condition_selection():
 
 
 
-#### ANY OTHER SUBSECTIONS
-
+## ANY OTHER SUBSECTIONS
+```
 def trying():
     # setting column as an index. to do so (also an another way to do so is pass an argument. see line 28)
     changed_index_in_df = df.set_index("Hobbyist", inplace=True)
@@ -90,13 +95,12 @@ def trying():
     # by the way  the inplace=True argument is using for change the actual dataframe object
     # You can use this argument almost in every functions
 
-
     print(df.loc[["Yes"], ["MainBranch", "Age", "Country"]])
 
     print("Reset index :")
     df.reset_index(inplace=True)
     print(df)
-
+```
 
 
 
