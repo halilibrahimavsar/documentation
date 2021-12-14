@@ -1,6 +1,6 @@
 # PANDAS DOC
 
-pandas' some subsection is Series and DataFrame.
+Pandas' some subsection is Series and DataFrame.
 Series is one dimensional and dataframe is two dimensional.
 if we slice dataframe we obtain series, so this mean dataframe contains series.
 
@@ -24,7 +24,7 @@ creating dataframe :
 ## INPUT AND OUTPUT
 
 for reading data from any source look at ```pd.read_...```
-and for save an data as an file look at ```pd.DataframeOrSeriesVeriable.to_....```
+and for save a data as an file look at ```pd.DataframeOrSeriesVeriable.to_....```
 
 ```
 csv_path = "/home/mint/PycharmProjects/aiCodes/data/survey_results_public.csv"
@@ -88,7 +88,7 @@ def condition_selection():
 ## ANY OTHER SUBSECTIONS
 ```
 def trying():
-    # setting column as an index. to do so (also an another way to do so is pass an argument. see line 28)
+    # setting column as an index. to do so (also an another way to do so is pass an argument. see line 31)
     changed_index_in_df = df.set_index("Hobbyist", inplace=True)
     # but this is just silly sample that we did.
     # Because of index mean is normally need to be unique values but in hobbyist data just Yes or No is available...
