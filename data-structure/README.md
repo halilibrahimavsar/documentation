@@ -1,1 +1,1 @@
-## just any data structure documentations with simple definitions
+## Just any data structure documentations with simple explaination
